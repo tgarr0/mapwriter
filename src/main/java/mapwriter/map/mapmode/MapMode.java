@@ -27,8 +27,8 @@ public class MapMode {
 	
 	// config settings
 	public boolean enabled = true;
-	public boolean rotate = true;
-	public boolean circular = true;
+	public boolean rotate = false;
+	public boolean circular = false;
 	public boolean coordsEnabled = false;
 	public int borderMode = 1;
 	public int playerArrowSize = 5;
@@ -98,7 +98,7 @@ public class MapMode {
 	
 	public void setScreenRes() {
 		Minecraft mc = Minecraft.getMinecraft();
-		ScaledResolution sRes = new ScaledResolution(mc.gameSettings, mc.displayWidth, mc.displayHeight);
+		ScaledResolution sRes = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
 		this.setScreenRes(mc.displayWidth, mc.displayHeight, sRes.getScaledWidth(), sRes.getScaledHeight(), sRes.getScaleFactor());
 	}
 	
